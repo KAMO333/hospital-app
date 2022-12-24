@@ -7,6 +7,7 @@ class App {
       "#firebaseui-auth-container"
     );
     this.$logout = document.querySelector(".logout");
+    this.$patientBtn = document.querySelector(".patient-button");
 
     this.ui = new firebaseui.auth.AuthUI(auth);
     this.handleAuth();
@@ -44,6 +45,9 @@ class App {
     this.$logout.addEventListener("click", () => {
    this.handleLogout();
     });
+    this.$patientBtn.addEventListener("click", (event) => {
+     console.log("CLICKED")
+    })
   }
 
   handleLogout() {

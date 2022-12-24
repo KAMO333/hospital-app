@@ -39,3 +39,33 @@
 .logout {
   margin-right: 100px;
 }
+
+.content-container {
+  margin-top: 25px;
+}
+.banner-wrap {
+  background-image: url(./assets/banner.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  border-bottom: 10px solid #cccccc;
+  border-top: 10px solid #cccccc;
+}
+.banner-wrap h1 {
+  display: flex;
+  justify-content: center;
+}
+.banner-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.patient-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}

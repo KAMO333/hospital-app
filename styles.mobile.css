@@ -1,0 +1,29 @@
+@media (max-width: 1000px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+  }
+  .navbar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .contant-container {
+    padding-top: 0px;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .content {
+    margin: 0;
+  }
+  .search-bar {
+    display: none;
+  }
+  .logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

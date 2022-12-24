@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+}
+
+.navbar.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    width: 65px;
+    margin-left: 10px;
+}
+.search{
+    display: flex;
+    border: 1px solid #cccccc;
+    width: 500px;
+}
+.search input{
+    border: none;
+    width: 100%;
+    padding-left: 15px;
+}
+.search button{
+    border: none;
+    border-left: 1px solid #cccccc;
+    width: 10%;
+}
+.logout{
+    margin-right: 100px;
+}

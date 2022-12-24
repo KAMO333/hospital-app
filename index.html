@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -14,10 +15,55 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles.mobile.css" />
     <title>hospital app</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="firebaseui-auth-container"></div>
+    <div id="app">
+      <div class="main-container">
+        <div class="navbar">
+          <div class="logo">
+            <i class="material-icons">menu</i>
+            <img
+              src="https://t4.ftcdn.net/jpg/01/69/76/45/360_F_169764523_7ysH07dmxLZmN0yHcZFWwrFXrxWckEMh.jpg"
+              alt=""
+            />
+          </div>
+          <div class="searchbar">
+            <div class="search">
+              <input type="text" placeholder="Search" />
+              <button><i class="material-icons">search</i></button>
+            </div>
+          </div>
+          <div class="logout">
+            <button>logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
-    <h1>Hello User</h1>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+    <script type="text/javascript">
+      const firebaseConfig = {
+        apiKey: "AIzaSyC8A7QiIgrwGEyzg7ySoAeD7KxxXq6oumU",
+        authDomain: "hospital-app-142a4.firebaseapp.com",
+        projectId: "hospital-app-142a4",
+        storageBucket: "hospital-app-142a4.appspot.com",
+        messagingSenderId: "23050115001",
+        appId: "1:23050115001:web:dbfc870bccf0a0197bc868",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      const auth = firebase.auth();
+      console.log(auth);
+    </script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

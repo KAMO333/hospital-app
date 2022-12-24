@@ -1,49 +1,61 @@
-// class App {
-//   constructor() {
-//     this.form = {};
+class App {
+  constructor() {
+    this.form = {};
 
-//     this.$app = document.querySelector("#app");
-//     this.$firebaseAuthContainer = document.querySelector(
-//       "#firebaseui-auth-container"
-//     );
-//     this.$logout = document.querySelector(".logout");
+    this.$app = document.querySelector("#app");
+    this.$firebaseAuthContainer = document.querySelector(
+      "#firebaseui-auth-container"
+    );
+    this.$logout = document.querySelector(".logout");
 
-//     this.ui = new firebaseui.auth.AuthUI(auth);
-//     this.handleAuth();
+    this.ui = new firebaseui.auth.AuthUI(auth);
+    this.handleAuth();
 
-//     this.addEventListener();
-//   }
+    this.addEventListener();
+  }
 
-//   handleAuth() {
-//     firebase.auth().onAuthStateChanged((user) => {
-//       if (user) {
-//         this.userId = user.uid;
-//         this.redirectToApp();
-//       } else {
-//         this.redirectToAuth();
-//       }
-//     });
-//   }
-//   redirectToApp() {
-//     this.$firebaseAuthContainer.style.display = "none";
-//     this.$app.style.display = "block";
-//   }
-//   redirectToAuth() {
-//     this.$firebaseAuthContainer.style.display = "block";
-//     this.$app.style.display = "none";
-//     this.ui.start("#firebaseui-auth-container", {
-//       signInOptions: [
-//         firebase.auth.EmailAuthProvider.PROVIDER_ID,
-//         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-//       ],
-//       // Other config options...
-//     });
-//   }
+  handleAuth() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.userId = user.uid;
+        this.redirectToApp();
+      } else {
+        this.redirectToAuth();
+      }
+    });
+  }
+  redirectToApp() {
+    this.$firebaseAuthContainer.style.display = "none";
+    this.$app.style.display = "block";
+  }
+  redirectToAuth() {
+    this.$firebaseAuthContainer.style.display = "block";
+    this.$app.style.display = "none";
+    this.ui.start("#firebaseui-auth-container", {
+      signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      ],
+      // Other config options...
+    });
+  }
 
-//   addEventListener() {
-//     this.$logout.addEventListener("click", () => {
-//       console.log("CLICKED");
-//     });
-//   }
-// }
-// const app = new App();
+  addEventListener() {
+    this.$logout.addEventListener("click", () => {
+   this.handleLogout();
+    });
+  }
+
+  handleLogout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.redirectToAuth();
+      })
+      .catch((error) => {
+        console.log("ERROR OCCURR  ED", error);
+      });
+  }
+}
+const app = new App();
